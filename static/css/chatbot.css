@@ -1,0 +1,127 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f5f1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    width: 420px;
+    max-width: 95%;
+    height: 600px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #16834a;
+    color: white;
+    padding: 22px;
+    text-align: center;
+}
+
+.chat-header h2 {
+    margin-bottom: 6px;
+}
+
+.chat-messages {
+    flex: 1;
+    min-height: 0;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #ffffff;
+}
+
+.bot-message,
+.user-message {
+    display: block;
+    width: fit-content;
+    max-width: 85%;
+    padding: 13px;
+    border-radius: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.bot-message {
+    background: #e5f5e9;
+    color: #174d30;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: #16834a;
+    color: #ffffff;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: #e5f5e9;
+    color: #174d30;
+    padding: 13px;
+    border-radius: 12px;
+    max-width: 85%;
+    align-self: flex-start;
+    line-height: 1.5;
+}
+
+#chatForm {
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#userMessage {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    min-width: 0;
+}
+
+#chatForm button {
+    padding: 12px 18px;
+    background: #16834a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#chatForm button:hover {
+    background: #10683a;
+}
+
+@media (max-width: 480px) {
+    .chat-container {
+        height: 90vh;
+    }
+}
+.user-message {
+    background: #16834a;
+    color: white;
+    padding: 13px;
+    border-radius: 12px;
+    max-width: 85%;
+    align-self: flex-end;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}

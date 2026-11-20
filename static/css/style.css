@@ -1,0 +1,369 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7faf6;
+    color: #24352b;
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: white;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #174d35;
+}
+
+.logo span {
+    color: #e69b38;
+}
+
+nav a {
+    text-decoration: none;
+    color: #344b3d;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    background: linear-gradient(120deg, #e6f3e8, #fdf5e8);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tagline {
+    color: #398354;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 1.15;
+    margin: 20px 0;
+    color: #174d35;
+}
+
+h1 span {
+    color: #df9634;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #58685c;
+}
+
+/* Buttons */
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 12px;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #247747;
+    color: white;
+}
+
+.primary:hover {
+    background: #174d35;
+}
+
+.secondary {
+    border: 2px solid #247747;
+    color: #247747;
+}
+
+.secondary:hover {
+    background: #247747;
+    color: white;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 65px 8%;
+}
+
+.about h2 {
+    color: #174d35;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about > p {
+    color: #68756c;
+    line-height: 1.7;
+}
+
+/* Feature Cards */
+.features {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.feature {
+    flex: 1;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #0000000d;
+    transition: 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    color: #247747;
+    margin-bottom: 12px;
+}
+
+.feature p {
+    line-height: 1.6;
+    color: #68756c;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #174d35;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+
+    header,
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .hero {
+        padding: 50px 7%;
+    }
+}
+
+
+
+/* Donation Form */
+
+.donation-form {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #00000012;
+    text-align: left;
+}
+
+.donation-form label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: bold;
+    color: #174d35;
+}
+
+.donation-form input,
+.donation-form select,
+.donation-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dfd7;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.donation-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.donation-form .safety-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.donation-form .safety-check input {
+    width: auto;
+    margin-top: 4px;
+}
+
+
+/* Founder Section */
+
+.founder-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.founder-card {
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: #f5f5f5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.founder-card h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.founder-role {
+    font-weight: bold;
+    color: #228b55;
+}
+
+
+/* ===== FOODRESCUE AI - FRESH FOOD BACKGROUND ===== */
+
+body {
+    background:
+        radial-gradient(ellipse at 5% 15%, rgba(190, 220, 165, 0.40), transparent 35%),
+        radial-gradient(ellipse at 95% 10%, rgba(255, 218, 160, 0.38), transparent 35%),
+        radial-gradient(ellipse at 10% 90%, rgba(255, 205, 170, 0.30), transparent 35%),
+        radial-gradient(ellipse at 90% 85%, rgba(190, 220, 165, 0.35), transparent 35%),
+        linear-gradient(135deg, #fffaf0, #f1f7e9, #fff5e9);
+    background-attachment: fixed;
+    color: #304333;
+}
+
+/* Food-inspired decorative corners */
+body::before {
+    content: "🥬  🥕  🍅";
+    position: fixed;
+    top: 100px;
+    left: 12px;
+    font-size: 35px;
+    letter-spacing: 8px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: "🍎  🥑  🍞";
+    position: fixed;
+    bottom: 35px;
+    right: 12px;
+    font-size: 35px;
+    letter-spacing: 8px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep website content above decorations */
+header,
+main,
+section,
+footer,
+.hero,
+.about,
+.founder-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Beautiful soft content cards */
+.feature,
+.founder-card,
+.donation-form {
+    background: rgba(255, 255, 255, 0.93);
+    border: 1px solid #e4e8d5;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(66, 94, 57, 0.10);
+}
+
+/* Fresh green headings */
+.hero h1,
+.founder-section h2 {
+    font-family: Georgia, serif;
+    color: #315d3e;
+}
+
+/* Warm food-inspired highlight */
+.hero h1 span {
+    color: #c58b3d;
+}
+
+/* Founder typography */
+.founder-card h3 {
+    font-family: Georgia, serif;
+    color: #315d3e;
+    font-size: 34px;
+}
+
+.founder-card p {
+    font-family: "Trebuchet MS", sans-serif;
+    color: #5d6e5d;
+    line-height: 1.9;
+}
+
+/* Soft navigation */
+header {
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid #e5e8d8;
+}
+
+/* Mobile adjustment */
+@media (max-width: 700px) {
+    body::before,
+    body::after {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .founder-card h3 {
+        font-size: 28px;
+    }
+}

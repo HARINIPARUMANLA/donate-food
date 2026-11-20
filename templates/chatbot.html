@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RescueBot | FoodRescue AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/chatbot.css') }}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="logo">FoodRescue <span>AI</span></div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/donate">Donate Food</a>
+            <a href="/listings">Find Food</a>
+            <a href="/matching">Smart Matching</a>
+            <a href="/requests">Manage Requests</a>
+            <a href="/#about">About</a>
+            <a href="/chatbot">RescueBot 🤖</a>
+        </nav>
+    </header>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>🤖 RescueBot</h2>
+            <p>Your FoodRescue AI Assistant</p>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">
+                Hello! I'm RescueBot. 👋
+                How can I help you with food donation or food requests today?
+            </div>
+        </div>
+
+        <form id="chatForm">
+            <input
+                type="text"
+                id="userMessage"
+                placeholder="Ask RescueBot something..."
+                autocomplete="off"
+                required
+            >
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
+</body>
+</html>

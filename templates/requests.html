@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Requests | FoodRescue AI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">FoodRescue <span>AI</span></div>
+
+   <nav>
+    <a href="/">Home</a>
+    <a href="/donate">Donate Food</a>
+    <a href="/listings">Find Food</a>
+    <a href="/matching">Smart Matching</a>
+    <a href="/requests">Manage Requests</a>
+    <a href="#about">About</a>
+    <a href="/chatbot">RescueBot 🤖</a>
+</nav>
+</header>
+
+<section class="about">
+
+    <h2>Food Request Management</h2>
+
+    <p>View and manage requests submitted by recipients.</p>
+
+    <div class="features">
+
+        {% for item in requests %}
+
+        <div class="feature">
+
+            <h3>{{ item['food_name'] }}</h3>
+
+            <p><strong>Recipient:</strong>
+                {{ item['recipient_name'] }}</p>
+
+            <p><strong>Organization:</strong>
+                {{ item['organization'] or 'Not provided' }}</p>
+
+            <p><strong>Requested Quantity:</strong>
+                {{ item['requested_quantity'] }}</p>
+
+            <p><strong>Purpose:</strong>
+                {{ item['purpose'] or 'Not provided' }}</p>
+
+            <p><strong>Status:</strong>
+                {{ item['status'] }}</p>
+                <div class="hero-buttons">
+
+    <form action="/update-request/{{ item['id'] }}"
+          method="POST"
+          style="display:inline;">
+
+        <input type="hidden" name="status" value="Approved">
+
+        <button type="submit" class="btn primary">
+            Approve
+        </button>
+
+    </form>
+
+    <form action="/update-request/{{ item['id'] }}"
+          method="POST"
+          style="display:inline;">
+
+        <input type="hidden" name="status" value="Rejected">
+
+        <button type="submit" class="btn secondary">
+            Reject
+        </button>
+
+    </form>
+
+</div>
+
+        </div>
+
+        {% else %}
+
+        <p>No food requests have been submitted yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<footer>
+    <p>FoodRescue AI © 2026 | Saving Food, Supporting Communities</p>
+</footer>
+
+</body>
+</html>

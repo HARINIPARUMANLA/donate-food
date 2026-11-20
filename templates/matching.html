@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Food Matching | FoodRescue AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">FoodRescue <span>AI</span></div>
+
+    <nav>
+    <a href="/">Home</a>
+    <a href="/donate">Donate Food</a>
+    <a href="/listings">Find Food</a>
+    <a href="/matching">Smart Matching</a>
+    <a href="/requests">Manage Requests</a>
+    <a href="#about">About</a>
+    <a href="/chatbot">RescueBot 🤖</a>
+</nav>
+</header>
+
+<section class="about">
+
+    <h2>Smart Food Matching</h2>
+
+    <p>
+        Our intelligent matching system helps connect available
+        food donations with recipients who need them.
+    </p>
+
+    
+<form action="/matching" method="POST" class="donation-form">
+
+    <h3>Tell Us What You Need</h3>
+
+    <label>Food Category</label>
+    <select name="category" required>
+        <option value="">Select Category</option>
+        <option value="Cooked Food">Cooked Food</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Vegetables">Vegetables</option>
+        <option value="Bakery Items">Bakery Items</option>
+        <option value="Packaged Food">Packaged Food</option>
+    </select>
+
+    <label>Required Quantity</label>
+    <input type="number" name="quantity" min="1" required>
+
+    <label>Preferred Location</label>
+    <input type="text" name="location"
+           placeholder="Enter your area or city" required>
+
+    <button type="submit" class="btn primary">
+        Find Matching Food
+    </button>
+
+</form>
+
+
+{% if searched %}
+
+    <h2>Matching Food Donations</h2>
+
+    <div class="features">
+
+        {% for donation in matches %}
+
+            <div class="feature">
+
+                <h3>{{ donation['food_name'] }}</h3>
+
+                <p>
+                    <strong>Match Score:</strong>
+                    {{ donation['match_score'] }}%
+                </p>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ donation['category'] }}
+                </p>
+
+                <p>
+                    <strong>Available Quantity:</strong>
+                    {{ donation['quantity'] }} {{ donation['unit'] }}
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    {{ donation['location'] }}
+                </p>
+
+                <p>
+                    <strong>Collect Before:</strong>
+                    {{ donation['deadline'] }}
+                </p>
+
+                <a href="{{ url_for('request_food',
+                            donation_id=donation['id']) }}"
+                   class="btn primary">
+                    Request This Food
+                </a>
+
+            </div>
+
+        {% else %}
+
+            <p>No suitable food donations found.
+               Try another location or quantity.</p>
+
+        {% endfor %}
+
+    </div>
+
+{% endif %}
+
+
+</section>
+
+<footer>
+    <p>FoodRescue AI © 2026 | Saving Food, Supporting Communities</p>
+</footer>
+
+</body>
+</html>

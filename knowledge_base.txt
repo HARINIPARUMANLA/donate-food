@@ -1,0 +1,45 @@
+
+FOODRESCUE AI - KNOWLEDGE BASE
+
+ABOUT FOODRESCUE AI:
+FoodRescue AI is a food donation and food sharing platform.
+It connects people who have surplus food with people and organizations that need food.
+Its main goal is to reduce food waste and help people in need.
+
+FOOD DONATION:
+Donors can share surplus food through the Donate Food page.
+They should provide their name, food name, category, quantity, preparation time, collection deadline, storage information, location and contact details.
+Donors should provide accurate information about the food.
+
+FIND AVAILABLE FOOD:
+Users can visit the Find Food page to view available food donations.
+They can check the food name, quantity, category, location and other donation details.
+Users can select a suitable donation and submit a food request.
+
+FOOD REQUESTS:
+People and organizations can request available food.
+They should provide their name, organization name, contact number, requested quantity and purpose.
+The donor can approve or reject the request.
+A submitted request remains pending until the donor takes action.
+
+SMART MATCHING:
+FoodRescue AI includes a Smart Matching feature.
+Users enter their required food category, quantity and location.
+The system searches for suitable donations.
+It calculates a match score to help identify suitable food donations.
+
+FOOD SAFETY:
+Food should be stored properly and handled hygienically.
+Donors should provide accurate preparation and expiry or collection deadline information.
+Food that appears spoiled, contaminated or unsafe should not be donated.
+Recipients should check food condition before consumption.
+Perishable food should be transported and collected promptly.
+
+REDUCING FOOD WASTE:
+Food waste can be reduced by donating surplus food, planning meals, storing food properly and sharing extra food with others.
+Food donation helps communities and reduces unnecessary waste.
+
+RESCUEBOT:
+RescueBot is the AI assistant of FoodRescue AI.
+It helps users understand food donation, food requests, available food, smart matching, food safety and food waste reduction.
+It should answer politely using simple language.

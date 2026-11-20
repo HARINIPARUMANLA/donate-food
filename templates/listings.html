@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Food | FoodRescue AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">FoodRescue <span>AI</span></div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/donate">Donate Food</a>
+        <a href="/listings">Find Food</a>
+        <a href="/matching">Smart Matching</a>
+        <a href="/requests">Manage Requests</a>
+        <a href="#about">About</a>
+        <a href="/chatbot">RescueBot 🤖</a>
+    </nav>
+</header>
+
+<section class="about">
+
+    <h2>Available Food Donations</h2>
+
+    <p>Discover surplus food available for collection.</p>
+
+    <div class="features">
+
+        {% for donation in donations %}
+
+        <div class="feature">
+
+            <h3>{{ donation['food_name'] }}</h3>
+
+            <p><strong>Donor:</strong> {{ donation['donor_name'] }}</p>
+
+            <p><strong>Category:</strong> {{ donation['category'] }}</p>
+
+            <p><strong>Quantity:</strong>
+                {{ donation['quantity'] }} {{ donation['unit'] }}
+            </p>
+
+            <p><strong>Prepared at:</strong>
+                {{ donation['prepared_at'] }}
+            </p>
+
+            <p><strong>Collect before:</strong>
+                {{ donation['deadline'] }}
+            </p>
+
+            <p><strong>Storage:</strong> {{ donation['storage'] }}</p>
+
+            <p><strong>Location:</strong> {{ donation['location'] }}</p>
+
+            <p><strong>Description:</strong>
+                {{ donation['description'] or 'Not provided' }}
+            </p>
+
+            <p><strong>Contact:</strong> {{ donation['contact'] }}</p>
+
+            <a href="{{ url_for('request_food', donation_id=donation['id']) }}"
+               class="btn primary">
+                Request Food
+            </a>
+
+        </div>
+
+        {% else %}
+
+        <p>No food donations are currently available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<footer>
+    <p>FoodRescue AI © 2026 | Saving Food, Supporting Communities</p>
+</footer>
+
+</body>
+</html>

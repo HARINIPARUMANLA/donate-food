@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Food | FoodRescue AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">FoodRescue <span>AI</span></div>
+
+    <nav>
+    <a href="/">Home</a>
+    <a href="/donate">Donate Food</a>
+    <a href="/listings">Find Food</a>
+    <a href="/matching">Smart Matching</a>
+    <a href="/requests">Manage Requests</a>
+    <a href="#about">About</a>
+    <a href="/chatbot">RescueBot 🤖</a>
+</nav>
+</header>
+
+<section class="about">
+    <h2>Donate Surplus Food</h2>
+    <p>Share your extra food and help someone in need.</p>
+
+    <form action="/submit-donation" method="POST" class="donation-form">
+
+        <label>Donor Name</label>
+        <input type="text" name="donor_name" placeholder="Enter your name" required>
+
+        <label>Food Name</label>
+        <input type="text" name="food_name" placeholder="Example: Vegetable Rice" required>
+
+        <label>Food Category</label>
+        <select name="category" required>
+            <option value="">Select Category</option>
+            <option>Cooked Food</option>
+            <option>Fruits</option>
+            <option>Vegetables</option>
+            <option>Bakery Items</option>
+            <option>Packaged Food</option>
+        </select>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" min="1" placeholder="Enter quantity" required>
+
+        <label>Unit</label>
+        <select name="unit" required>
+            <option value="">Select Unit</option>
+            <option>Meals</option>
+            <option>Kg</option>
+            <option>Packets</option>
+            <option>Boxes</option>
+        </select>
+
+        <label>Preparation Date and Time</label>
+        <input type="datetime-local" name="prepared_at" required>
+
+        <label>Collection Deadline</label>
+        <input type="datetime-local" name="deadline" required>
+
+        <label>Storage Conditions</label>
+        <select name="storage" required>
+            <option value="">Select Storage Condition</option>
+            <option>Refrigerated</option>
+            <option>Kept Hot</option>
+            <option>Room Temperature</option>
+            <option>Frozen</option>
+        </select>
+
+        <label>Pickup Location</label>
+        <input type="text" name="location" placeholder="Enter pickup area" required>
+
+        <label>Contact Number</label>
+        <input type="tel" name="contact" placeholder="Enter contact number" required>
+
+        <label>Additional Information</label>
+        <textarea name="description" placeholder="Mention ingredients or allergen information, if known"></textarea>
+
+        <label class="safety-check">
+            <input type="checkbox" name="safety_confirmed" value="yes" required>
+            I confirm that the food has been handled and stored appropriately.
+        </label>
+
+        <button type="submit" class="btn primary">Submit Donation</button>
+
+    </form>
+</section>
+
+<footer>
+    <p>FoodRescue AI © 2026 | Saving Food, Supporting Communities</p>
+</footer>
+
+</body>
+</html>
